@@ -44,3 +44,38 @@
     Фронтенд (на выбор).
     Готовность к деплою (контейнеризация, компоновка).
     Код на GitHub с вменяемым README (опишите архитектуру, как запустить).
+
+cd D:\Projects\OnlineChat\backend
+docker-compose down
+docker-compose up --build
+
+
+ ЧТО УЧИТЬ ДАЛЬШЕ (по приоритету):
+
+    SQLAlchemy Core - как работает db.query(User).filter_by(...)
+    Pydantic схемы - для валидации данных в API
+    Alembic - миграции (изменение структуры БД)
+    FastAPI Depends - зависимости, middleware
+    Docker networking - как контейнеры общаются
+
+Добавь в свою работающую систему:
+
+    Модель Message с полями: id, text, user_id
+    Эндпоинт POST /messages для создания
+    Эндпоинт GET /messages для чтения
+
+
+структура на данный момент:
+
+OnlineChat/
+├── backend/                    # ← Ты находишься здесь при запуске
+│   ├── app/                    # ← Папка с кодом
+│   │   ├── .env
+│   │   ├── db.py
+│   │   ├── main.py
+│   │   ├── models.py
+│   │   └── __init__.py
+│   ├── docker-compose.yml
+│   ├── Dockerfile              
+│   └── requirements.txt
+└── venv/
